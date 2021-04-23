@@ -80,3 +80,35 @@ module pad_functional_pu (
   rpmos  (PAD, PAD_wi, 1'b0);
 
 endmodule
+
+module pad_functional_input
+(
+   output logic             O,
+   inout wire             PAD
+);
+
+  pad_functional_pd i_pad (
+    .OEN(1'b0),
+    .I(),
+    .O(O),
+    .PEN(1'b1),
+    .PAD(PAD)
+  );
+
+endmodule
+
+module pad_functional_output
+(
+  input logic       I,
+  inout wire      PAD
+);
+
+   pad_functional_pd i_pad (
+    .OEN(1'b1),
+    .I(I),
+    .O(),
+    .PEN(1'b1),
+    .PAD(PAD)
+  );
+
+endmodule
