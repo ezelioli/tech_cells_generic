@@ -88,7 +88,7 @@ module pad_functional_input
 );
 
   pad_functional_pd i_pad (
-    .OEN(1'b0),
+    .OEN(1'b1),
     .I(),
     .O(O),
     .PEN(1'b1),
@@ -104,7 +104,7 @@ module pad_functional_output
 );
 
    pad_functional_pd i_pad (
-    .OEN(1'b1),
+    .OEN(1'b0),
     .I(I),
     .O(),
     .PEN(1'b1),
